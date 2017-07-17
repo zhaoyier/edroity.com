@@ -1,0 +1,16 @@
+<seelog type="asyncloop">
+    <outputs formatid="main">
+        <filter levels="debug,info,warn,critical,error">
+            <console />
+        </filter>
+        <filter levels="debug,info,warn,critical,error">
+            <rollingfile type="date" filename="./logs/debug.log" datepattern="2006.01.02" maxrolls="100" />
+        </filter>
+        <filter levels="error,critical">
+            <rollingfile type="date" filename="./logs/error.log" datepattern="2006.01.02" maxrolls="100" />
+        </filter>
+    </outputs>
+    <formats>
+        <format id="main" format="%Date/%Time[%LEVEL]%File:%Line %Msg%n"/>
+    </formats>
+</seelog>
